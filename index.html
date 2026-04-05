@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Avaluo HogarMX</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="app">
+  <header>
+    <h1>Avaluo HogarMX</h1>
+    <p>Estima el valor de tu vivienda en México.</p>
+  </header>
+
+  <div class="card">
+    <h2>Datos personales</h2>
+    <div class="grid">
+      <input id="nombre" placeholder="NOMBRE COMPLETO">
+      <input id="telefono" placeholder="TELÉFONO">
+    </div>
+
+    <h2>Ubicación</h2>
+    <div class="grid">
+      <select id="estado"></select>
+      <select id="municipio"></select>
+      <select id="localidad"></select>
+    </div>
+
+    <button onclick="cargarAreaSeleccionada()">Seleccionar ubicación de su domicilio</button>
+    <div id="map" style="height:300px;"></div>
+  </div>
+
+  <div class="card">
+    <h2>Características</h2>
+    <div class="grid">
+      <select id="pisos">
+        <option value="1">1 piso</option>
+        <option value="2">2 pisos</option>
+      </select>
+
+      <select id="tipo">
+        <option value="departamento">Departamento</option>
+        <option value="casa">Casa sola</option>
+        <option value="condominio">Condominio</option>
+        <option value="privado">Circuito cerrado</option>
+      </select>
+
+      <input type="number" id="antiguedad" placeholder="Años de antigüedad">
+    </div>
+
+    <button class="primary" onclick="calcularValor()">Calcular valor</button>
+
+    <div class="resultado-card">
+      <h3>Valor estimado</h3>
+      <p id="resultado">$0</p>
+    </div>
+
+    <button class="secondary" onclick="guardarDatos()">Solicitar avalúo comercial exacto</button>
+  </div>
+</div>
+
+<!-- 🔥 Firebase v8 (IMPORTANTE) -->
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+<!-- Config -->
+<script src="firebase.js"></script>
+
+<!-- App -->
+<script src="app.js"></script>
+
+<!-- Google Maps -->
+<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-98MbzpDR-IXkcnE-gerL78PB0o7fPCw&callback=initMap"></script>
+
+</body>
+</html>
