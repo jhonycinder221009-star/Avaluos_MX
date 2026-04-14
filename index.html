@@ -40,13 +40,15 @@
       </select>
 
       <select id="tipo">
+        <option value="condominio">Casa habitación privada</option>
+        <option value="casa">Casa habitación</option>
         <option value="departamento">Departamento</option>
-        <option value="casa">Casa sola</option>
-        <option value="condominio">Condominio</option>
-        <option value="privado">Circuito cerrado</option>
+        <option value="duplex">Casa dúplex</option>
+        <option value="terreno">Terreno</option>
       </select>
 
       <input type="number" id="antiguedad" placeholder="Años de antigüedad">
+      <input type="number" id="total_de_metros_de_terreno" placeholder="total de metros de terreno">
     </div>
 
     <button class="primary" onclick="calcularValor()">Calcular valor</button>

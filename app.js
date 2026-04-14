@@ -129,14 +129,15 @@ function calcularValor(){
 
   const base = 1200000;
   const factorTipo = {
-    departamento:0.9,
+    condominio:0.9,
     casa:1,
-    condominio:1.15,
-    privado:1.25
+    departamento:1.15,
+    duplex:1.25,
+    terreno:1.44
   };
 
-  let valor = base * (pisos==2?1.2:1) * (factorTipo[tipo]||1) - (antiguedad*12000);
-  valor = Math.max(valor,0);
+  let valor = base * ((pisos == 2 || tipo === "terreno") ? 1.2 : 1) * (factorTipo[tipo] || 1) - (antiguedad * 12000);
+valor = Math.max(valor, 0);
 
   document.getElementById("resultado").innerText = "$"+valor.toLocaleString();
 }
